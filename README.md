@@ -74,7 +74,7 @@ image/2024AutoFusion.png
 
 CurriculumLoc: Enhancing Cross-Domain Geolocalization Through Multistage Refinement
 Authers:
-Boni Hu, Shuhui Bu, Lin Chen, Pengcheng Han
+Boni Hu; Lin Chen; Runjian Chen; Shuhui Bu; Pengcheng Han; Haowei Li
 Abstract:
 Cross-domain geolocalization, which aims to estimate the geographical location of a query image based on a reference image from a different domain, is a challenging task due to the significant domain gap between the reference and query images. Existing methods typically focus on aligning the visual features of the two images, but overlook the domain-specific characteristics that can be exploited to enhance the geolocalization performance. In this paper, we propose CurriculumLoc, a multistage refinement framework for cross-domain geolocalization. Our method first aligns the visual features of the two images using a feature alignment network. Then, we introduce a curriculum learning strategy to progressively refine the geolocalization results. Specifically, we first train a coarse geolocalization model using a small dataset with limited domain gap. Subsequently, we fine-tune the model using a larger dataset with a larger domain gap. Finally, we perform a post-processing step to further improve the geolocalization accuracy. Extensive experiments demonstrate that our method achieves state-of-the-art performance on the challenging cross-domain geolocalization task.
 pub: IEEE Transactions on Geoscience and Remote Sensing
