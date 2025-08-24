@@ -1,0 +1,266 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Lin Chen} \\[7.5pt]
+\href{https://npu-chenlin.github.io/}{\raisebox{-0.05\height}\faGlobe\ npu-chenlin.github.io} \ $|$ \ 
+\href{https://scholar.google.com/citations?user=SNbO7HUAAAAJ}{\raisebox{-0.05\height}\faGraduationCap\ Google Scholar} \ $|$ \ 
+\href{https://orcid.org/0000-0001-8330-9369}{\raisebox{-0.05\height}\faIdCard\ ORCID} \ $|$ \ 
+\href{mailto:npuchenlin@mail.nwpu.edu.cn}{\raisebox{-0.05\height}\faEnvelope \ npuchenlin@mail.nwpu.edu.cn} \ $|$ \ 
+\raisebox{-0.05\height}\faMapMarker \ Shaanxi, China \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Research Summary
+\section{Research Summary}
+Fourth-year Ph.D. candidate specializing in computer vision and robotics with expertise in 3D reconstruction, SLAM, and differentiable rendering. Research interests include open-vocabulary environment representation and Vision-Language-Action (VLA) models. Technical Lead at multiple startups developing commercial SLAM and 3D reconstruction solutions for UAV clusters, bridging theoretical research with practical industry applications.
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2022 - 2026 & Ph.D. in Aeronautical and Astronautical Science and Technology at \textbf{Northwestern Polytechnical University} \hfill \normalsize (Expected 2026) \\
+& School of Aeronautics, Advisor: Prof. Shuhui Bu \\
+
+2019 - 2022 & M.S. in Vehicle Operation Engineering at \textbf{Northwestern Polytechnical University} \hfill \normalsize (Postgraduate Recommendation) \\
+& School of Aeronautics \\
+
+2015 - 2019 & B.E. in Aircraft Design and Engineering at \textbf{Northwestern Polytechnical University} \\
+& School of Aeronautics \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Selected Publications}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{CoMA-SLAM: Collaborative Multi-Agent Gaussian SLAM} & \hfill AAAI 2025 (Under Review) \\
+\multicolumn{2}{@{}X@{}}{\textbf{Lin Chen}, Yongxin Su, et al. First distributed multi-agent Gaussian SLAM framework with 99.8\% bandwidth reduction.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{GauS-SLAM: Dense RGB-D SLAM with Gaussian Surfels} & \hfill arXiv 2025 \\
+\multicolumn{2}{@{}X@{}}{Yongxin Su, \textbf{Lin Chen}, et al. Dense RGB-D SLAM system using 2D Gaussian surfels with superior tracking precision.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{G²-Mapping: General Gaussian Mapping for Multiple Systems} & \hfill IEEE TASE 2025 \\
+\multicolumn{2}{@{}X@{}}{\textbf{Lin Chen}, Boni Hu, et al. General method supporting monocular, RGB-D, and LiDAR-Inertial-Visual systems.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{CODE: COllaborative Visual-UWB SLAM} & \hfill IEEE IROS 2025 \\
+\multicolumn{2}{@{}X@{}}{\textbf{Lin Chen}, Xuan Jia, et al. Collaborative online dense mapping system for multiple UAVs with UWB measurements.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{RTSfM: Real-Time Structure From Motion for Sequential Aerial Images} & \hfill IEEE TGRS 2021 \\
+\multicolumn{2}{@{}X@{}}{Yong Zhao, \textbf{Lin Chen}, et al. Online sequential SfM solution for high-frequency aerial images with novel precision.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{CurriculumLoc: Cross-Domain Geolocalization} & \hfill IEEE TGRS 2024 \\
+\multicolumn{2}{@{}X@{}}{Boni Hu, \textbf{Lin Chen}, et al. Multistage refinement framework for cross-domain geolocalization.} \\
+\end{tabularx}
+
+\vspace{0.5em}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{DenseFusion: Large-Scale Online Dense Mapping} & \hfill IEEE IROS 2020 \\
+\multicolumn{2}{@{}X@{}}{\textbf{Lin Chen}, Yong Zhao, et al. Large-scale online dense point cloud and DSM mapping method for UAVs.} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{joblong}{Technical Lead, Shanghai CVLife Technology}{Aug 2024 - Present}
+\item Collaborated with Computer Vision Life platform on 3DGS and LIVO integration
+\item Led development of SLAMiBot laser-vision product with LiDAR+Camera+RTK fusion
+\item Implemented hardware-synchronized triggering and multi-sensor data acquisition
+\item Developed mobile applications, scanning gimbals, and LIVO-3DGS post-processing software
+\end{joblong}
+
+\begin{joblong}{Technical Lead, Xi'an SIBITU Intelligent Technology}{Mar 2022 - Present}
+\item Leading development of real-time mapping solutions based on SLAM and SfM technologies
+\item Generated orthoimages, elevation maps, and 3D point clouds in real-time for UAV systems
+\item Developed multi-UAV collaborative reconstruction systems for large-scale mapping
+\item Deployed solutions across Linux and Windows platforms with x64/aarch64 architectures
+\end{joblong}
+
+\begin{jobshort}{Independent Quantitative Trading}{Feb 2023 - Present}
+Developed fully automated quantitative trading system including data acquisition, strategy development, backtesting, and live trading execution with comprehensive performance analysis.
+\end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Computer Vision &  \normalsize{3D Gaussian Splatting, SLAM, Structure from Motion, Dense Reconstruction, Differentiable Rendering}\\
+Robotics  &  \normalsize{LiDAR-Visual-Inertial Odometry, Multi-UAV Systems, Real-time Mapping, Sensor Fusion}\\  
+Programming &  \normalsize{C++, Python, CUDA, ROS, OpenCV, PyTorch, Real-time Systems}\\
+Hardware &  \normalsize{UAV Systems, LiDAR+Camera+RTK Integration, Multi-sensor Synchronization}\\
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
