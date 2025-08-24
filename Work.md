@@ -10,10 +10,10 @@ image/work_sibitu_software_dom.png
 2. 自组网集群无人机编队飞行
 image/work_sibitu_cluster.png
 
-计算机视觉life
+上海司岚博科技有限公司
 icon: image/work_cvlife_icon.jpg
 2024年08月 - 至今
-起初负责3DGS和LIVO结合的工作，探索了深度约束，2D高斯表达等多种方案。之后主导了激光雷达视觉产品SLAMiBot开发，完成了一个包含LiDAR+Camera+RTK融合数据采集设备，内部采用硬同步触发。此外还包含配套的手机应用，扫摆云台和 LIVO-3DGS后处理软件。
+与计算机视觉life平台合作，负责3DGS和LIVO结合的工作，探索了深度约束，2D高斯表达, 姿态再优化等多种方案优化重建效果。后来主导了激光雷达视觉产品SLAMiBot开发，完成了一个包含LiDAR+Camera+RTK融合数据采集设备，内部采用硬同步触发。此外还包含配套的手机应用，扫摆云台和 LIVO-3DGS后处理软件。
 官网 https://ai.slamibot.com/
 image/work_cvlife_slamibot.png
 多种传感器时间系统一致，硬触发同步，自定义曝光调节和白平衡。
