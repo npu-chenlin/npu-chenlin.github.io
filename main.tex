@@ -50,6 +50,9 @@
 \usepackage{url}
 \usepackage{parskip} 	
 
+% CJK support for Chinese characters
+\usepackage{CJKutf8}
+
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
@@ -82,7 +85,7 @@
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %for publications
-\usepackage[style=authoryear,sorting=ydnt, maxbibnames=99, minbibnames=2]{biblatex}
+\usepackage[style=authoryear,sorting=none, maxbibnames=99, minbibnames=2]{biblatex}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -144,7 +147,7 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Lin Chen} \\[7.5pt]
-\href{https://npu-chenlin.github.io/}{\raisebox{-0.05\height}\faGlobe\ home} \ $|$ \ 
+\href{https://npu-chenlin.github.io/}{\raisebox{-0.05\height}\faGlobe\ Home} \ $|$ \ 
 \href{https://scholar.google.com/citations?user=SNbO7HUAAAAJ}{\raisebox{-0.05\height}\faGraduationCap\ Google Scholar} \ $|$ \ 
 \href{https://orcid.org/0000-0001-8330-9369}{\raisebox{-0.05\height}\faIdCard\ ORCID} \ $|$ \ 
 \href{mailto:npuchenlin@mail.nwpu.edu.cn}{\raisebox{-0.05\height}\faEnvelope \ npuchenlin@mail.nwpu.edu.cn} \ $|$ \ 
@@ -157,7 +160,7 @@
 
 %Research Summary
 \section{Research Summary}
-Fourth-year Ph.D. candidate specializing in computer vision and robotics with expertise in 3D reconstruction, SLAM, and differentiable rendering. Research interests include open-vocabulary environment representation and Vision-Language-Action (VLA) models. Technical Lead at multiple startups developing commercial SLAM and 3D reconstruction solutions for UAV clusters, bridging theoretical research with practical industry applications. For more details, please visit my homepage at \href{https://npu-chenlin.github.io/}{npu-chenlin.github.io}.
+Fourth-year Ph.D. candidate in Aeronautical and Astronautical Science and Technology at Northwestern Polytechnical University. My research began with UAV rapid mapping, focusing on real-time generation of georeferenced orthoimages, elevation maps, and dense point clouds. This system has been commercialized and deployed across multiple universities and research institutes. Subsequently, I conducted research on single-agent 3D Gaussian Splatting (3DGS) based SLAM systems and multi-agent 2D Surfel SLAM systems. In multi-agent systems, I explored UWB-based mutual localization, independently developed a decentralized mesh-networked VTOL fixed-wing cluster flight system, investigated agent-based cluster fixed-wing operations, and explored the advantages of vision foundation models in 3DGS scene construction. Currently, my research interests include open-vocabulary environment representation and Vision-Language-Action (VLA) models. Technical Lead at multiple startups, bridging theoretical research with practical industry applications. For more details, please visit my homepage at \href{https://npu-chenlin.github.io/}{npu-chenlin.github.io}.
 
 
 %----------------------------------------------------------------------------------------
@@ -177,7 +180,7 @@ Fourth-year Ph.D. candidate specializing in computer vision and robotics with ex
 %----------------------------------------------------------------------------------------
 \section{Publications}
 \begin{refsection}[citations.bib]
-\nocite{coma2025,gaus2025,g2mapping2025,code2025,curriculumloc2024,rtsfm2021,densefusion2020}
+\nocite{coma2025,gaus2025,g2mapping2025,code2025,clusteraliv2025,curriculumloc2024,autofusion2024,hybridfusion2023,fasttree2023,rtsfm2021,svar2021,densefusion2020}
 \printbibliography[heading=none]
 \end{refsection}
 
@@ -186,14 +189,14 @@ Fourth-year Ph.D. candidate specializing in computer vision and robotics with ex
 %----------------------------------------------------------------------------------------
 \section{Work Experience}
 
-\begin{joblong}{Technical Lead, Shanghai CVLife Technology}{Aug 2024 - Present}
-\item Collaborated with Computer Vision Life platform on 3DGS and LIVO integration
+\begin{joblong}{Technical Lead, \begin{CJK}{UTF8}{gbsn}上海司岚博科技有限公司\end{CJK}}{Aug 2024 - Present}
+\item Collaborated with CVLife platform on 3DGS and LIVO integration
 \item Led development of SLAMiBot laser-vision product with LiDAR+Camera+RTK fusion
 \item Implemented hardware-synchronized triggering and multi-sensor data acquisition
 \item Developed mobile applications, scanning gimbals, and LIVO-3DGS post-processing software
 \end{joblong}
 
-\begin{joblong}{Technical Lead, Xi'an SIBITU Intelligent Technology}{Mar 2022 - Present}
+\begin{joblong}{Technical Lead, \begin{CJK}{UTF8}{gbsn}西安视野慧图智能科技有限公司\end{CJK}}{Mar 2022 - Present}
 \item Leading development of real-time mapping solutions based on SLAM and SfM technologies
 \item Generated orthoimages, elevation maps, and 3D point clouds in real-time for UAV systems
 \item Developed multi-UAV collaborative reconstruction systems for large-scale mapping
@@ -216,6 +219,5 @@ Hardware &  \normalsize{UAV Systems, LiDAR+Camera+RTK Integration, Multi-sensor 
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
 
 \end{document}
